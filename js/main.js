@@ -169,11 +169,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     5. EA FC / FIFA STYLE PLAYER CARD 3D TILT EFFECT
+     5. HERO POLAROID COLLAGE PARALLAX (DESKTOP ONLY)
+     -------------------------------------------------------------------------- */
+  const heroSection = document.getElementById('hero');
+  const heroCollage = document.getElementById('hero-collage');
+  const collageItems = document.querySelectorAll('.hero-collage .collage-item');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (heroSection && heroCollage && collageItems.length > 0 && !prefersReducedMotion) {
+    if (window.innerWidth >= 1025) {
+      let isHeroHovered = false;
+
+      heroSection.addEventListener('mouseenter', () => {
+        isHeroHovered = true;
+      });
+
+      heroSection.addEventListener('mousemove', (e) => {
+        if (!isHeroHovered) return;
+        const rect = heroCollage.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = (e.clientX - centerX) / (rect.width / 2);
+        const deltaY = (e.clientY - centerY) / (rect.height / 2);
+
+        collageItems.forEach((item) => {
+          const depth = parseFloat(item.getAttribute('data-parallax-depth')) || 0.03;
+          const moveX = deltaX * depth * 35;
+          const moveY = deltaY * depth * 35;
+          let baseRot = 0;
+          if (item.classList.contains('polaroid-1')) baseRot = -7;
+          else if (item.classList.contains('polaroid-2')) baseRot = 6;
+          else if (item.classList.contains('polaroid-3')) baseRot = -4;
+
+          item.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotate(${baseRot}deg)`;
+        });
+      });
+
+      heroSection.addEventListener('mouseleave', () => {
+        isHeroHovered = false;
+        collageItems.forEach((item) => {
+          let baseRot = 0;
+          if (item.classList.contains('polaroid-1')) baseRot = -7;
+          else if (item.classList.contains('polaroid-2')) baseRot = 6;
+          else if (item.classList.contains('polaroid-3')) baseRot = -4;
+          item.style.transform = `translate3d(0, 0, 0) rotate(${baseRot}deg)`;
+        });
+      });
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     6. EA FC / FIFA STYLE PLAYER CARD 3D TILT EFFECT
      -------------------------------------------------------------------------- */
   const fifaCard = document.querySelector('.fifa-card');
 
-  if (fifaCard && window.matchMedia('(hover: hover)').matches) {
+  if (fifaCard && window.matchMedia('(hover: hover)').matches && !prefersReducedMotion) {
     fifaCard.addEventListener('mousemove', (e) => {
       const rect = fifaCard.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -182,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -12; // tilt angle
+      const rotateX = ((y - centerY) / centerY) * -12;
       const rotateY = ((x - centerX) / centerX) * 12;
 
       fifaCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
@@ -194,9 +244,143 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     6. RESPONSIVE KEYBOARD & SWIPE LIGHTBOX FOR GALLERY
+     7. MATCHDAY MOMENTS FILM-STRIP CONTROLLER (SCROLL, DRAG & ARROWS)
      -------------------------------------------------------------------------- */
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  const momentsTrack = document.getElementById('moments-track');
+  const momentsPrev = document.getElementById('moments-prev');
+  const momentsNext = document.getElementById('moments-next');
+  let isMomentDragging = false;
+  let momentStartX = 0;
+  let momentScrollLeft = 0;
+  let momentMoved = 0;
+
+  if (momentsTrack) {
+    if (momentsPrev) {
+      momentsPrev.addEventListener('click', () => {
+        momentsTrack.scrollBy({ left: -340, behavior: 'smooth' });
+      });
+    }
+    if (momentsNext) {
+      momentsNext.addEventListener('click', () => {
+        momentsTrack.scrollBy({ left: 340, behavior: 'smooth' });
+      });
+    }
+
+    // Mouse drag-to-scroll support
+    momentsTrack.addEventListener('mousedown', (e) => {
+      isMomentDragging = true;
+      momentMoved = 0;
+      momentStartX = e.pageX - momentsTrack.offsetLeft;
+      momentScrollLeft = momentsTrack.scrollLeft;
+      momentsTrack.style.cursor = 'grabbing';
+      momentsTrack.style.scrollBehavior = 'auto';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isMomentDragging) return;
+      const x = e.pageX - momentsTrack.offsetLeft;
+      momentMoved = Math.abs(x - momentStartX);
+      const walk = (x - momentStartX) * 1.5;
+      momentsTrack.scrollLeft = momentScrollLeft - walk;
+    });
+
+    const endMomentDrag = () => {
+      if (isMomentDragging) {
+        isMomentDragging = false;
+        momentsTrack.style.cursor = 'grab';
+        momentsTrack.style.scrollBehavior = 'smooth';
+      }
+    };
+
+    window.addEventListener('mouseup', endMomentDrag);
+    momentsTrack.addEventListener('mouseleave', endMomentDrag);
+  }
+
+  /* --------------------------------------------------------------------------
+     8. GALLERY CATEGORY FILTERS & SCOREBOARD COUNTER
+     -------------------------------------------------------------------------- */
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const galleryCounter = document.getElementById('gallery-counter');
+  const filterStatusLabel = document.getElementById('scoreboard-filter-status');
+
+  const animateGalleryCounter = (targetVal) => {
+    if (!galleryCounter) return;
+    const startVal = parseInt(galleryCounter.textContent, 10) || 0;
+    if (startVal === targetVal) return;
+
+    const duration = 500;
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(startVal + (targetVal - startVal) * ease);
+      galleryCounter.textContent = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        galleryCounter.textContent = targetVal;
+      }
+    };
+    requestAnimationFrame(update);
+  };
+
+  const applyGalleryFilter = (category) => {
+    let visibleCount = 0;
+    galleryCards.forEach((card) => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    animateGalleryCounter(visibleCount);
+
+    if (filterStatusLabel) {
+      filterStatusLabel.textContent = `FILTER: ${category.toUpperCase()}`;
+    }
+  };
+
+  filterChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach((c) => {
+        c.classList.remove('active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
+
+      const filter = chip.getAttribute('data-filter') || 'matches';
+      applyGalleryFilter(filter);
+    });
+  });
+
+  // Default to Matches filter initially as required
+  applyGalleryFilter('matches');
+
+  // Also trigger counter animation when gallery scrolls into view
+  const gallerySection = document.getElementById('gallery');
+  if (gallerySection && 'IntersectionObserver' in window) {
+    let galleryScrolledIn = false;
+    const galleryObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !galleryScrolledIn) {
+        galleryScrolledIn = true;
+        const visibleCards = document.querySelectorAll('.gallery-card:not(.hidden)').length;
+        animateGalleryCounter(visibleCards);
+      }
+    }, { threshold: 0.2 });
+    galleryObserver.observe(gallerySection);
+  }
+
+  /* --------------------------------------------------------------------------
+     9. FULLSCREEN LIGHTBOX MODAL (WITH FOCUS TRAP, ARROW KEYS & TOUCH SWIPE)
+     -------------------------------------------------------------------------- */
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
@@ -205,34 +389,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxPrev = document.getElementById('lightbox-prev');
   const lightboxNext = document.getElementById('lightbox-next');
 
-  let currentGalleryIndex = 0;
+  let activeLightboxItems = [];
+  let currentLightboxIndex = 0;
   let lastFocusedElement = null;
 
-  const galleryData = Array.from(galleryItems).map((item) => {
-    const img = item.querySelector('.gallery-img');
-    const caption = item.querySelector('.gallery-caption')?.textContent.trim() || 'Match Action';
-    return {
-      src: img?.getAttribute('src') || '',
-      alt: img?.getAttribute('alt') || 'Mohammed Sajith G Match Photo',
-      caption: caption
-    };
-  });
+  const getCardData = (el) => {
+    const fullSrc = el.getAttribute('data-full') || el.querySelector('img')?.getAttribute('src') || '';
+    const alt = el.querySelector('img')?.getAttribute('alt') || 'Mohammed Sajith G Match Photo';
+    const caption = el.querySelector('.gallery-caption, .moment-title')?.textContent.trim() || 'Match Action';
+    const cat = el.querySelector('.gallery-cat-tag, .moment-category-pill')?.textContent.trim() || '';
+    return { src: fullSrc, alt: alt, caption: caption, category: cat };
+  };
 
-  const openLightbox = (index) => {
-    if (!lightboxModal || !galleryData[index]) return;
+  const openLightbox = (itemsArray, startIndex) => {
+    if (!lightboxModal || itemsArray.length === 0) return;
     lastFocusedElement = document.activeElement;
-    currentGalleryIndex = index;
-    updateLightboxContent();
+    activeLightboxItems = itemsArray;
+    currentLightboxIndex = startIndex >= 0 && startIndex < itemsArray.length ? startIndex : 0;
+
+    renderLightboxContent();
 
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    if (lightboxClose) lightboxClose.focus();
+    if (lightboxClose) {
+      setTimeout(() => lightboxClose.focus(), 50);
+    }
   };
 
   const closeLightbox = () => {
-    if (!lightboxModal) return;
+    if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
     lightboxModal.classList.remove('active');
     lightboxModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
@@ -242,8 +429,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const updateLightboxContent = () => {
-    const data = galleryData[currentGalleryIndex];
+  const renderLightboxContent = () => {
+    const data = activeLightboxItems[currentLightboxIndex];
     if (!data) return;
 
     if (lightboxImg) {
@@ -251,37 +438,66 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxImg.alt = data.alt;
     }
     if (lightboxCaption) {
-      lightboxCaption.textContent = data.caption;
+      lightboxCaption.innerHTML = `${data.category ? `<span style="color:var(--turf-lime); font-size:0.85em; display:block; margin-bottom:2px;">${data.category}</span>` : ''}${data.caption}`;
     }
     if (lightboxCounter) {
-      lightboxCounter.textContent = `MATCH PHOTO ${currentGalleryIndex + 1} OF ${galleryData.length}`;
+      const currentNum = String(currentLightboxIndex + 1).padStart(2, '0');
+      const totalNum = String(activeLightboxItems.length).padStart(2, '0');
+      lightboxCounter.textContent = `MATCH PHOTO ${currentNum} / ${totalNum}`;
     }
   };
 
-  const showNextImage = () => {
-    currentGalleryIndex = (currentGalleryIndex + 1) % galleryData.length;
-    updateLightboxContent();
+  const showNextLightbox = () => {
+    if (activeLightboxItems.length === 0) return;
+    currentLightboxIndex = (currentLightboxIndex + 1) % activeLightboxItems.length;
+    renderLightboxContent();
   };
 
-  const showPrevImage = () => {
-    currentGalleryIndex = (currentGalleryIndex - 1 + galleryData.length) % galleryData.length;
-    updateLightboxContent();
+  const showPrevLightbox = () => {
+    if (activeLightboxItems.length === 0) return;
+    currentLightboxIndex = (currentLightboxIndex - 1 + activeLightboxItems.length) % activeLightboxItems.length;
+    renderLightboxContent();
   };
 
-  // Bind gallery items
-  galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index));
-    item.addEventListener('keydown', (e) => {
+  // Bind Gallery Cards
+  galleryCards.forEach((card) => {
+    const handleCardOpen = (e) => {
+      const visibleCards = Array.from(document.querySelectorAll('.gallery-card:not(.hidden)'));
+      const items = visibleCards.map(getCardData);
+      const clickedIdx = visibleCards.indexOf(card);
+      openLightbox(items, clickedIdx !== -1 ? clickedIdx : 0);
+    };
+
+    card.addEventListener('click', handleCardOpen);
+    card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openLightbox(index);
+        handleCardOpen(e);
+      }
+    });
+  });
+
+  // Bind Matchday Moment Cards
+  const momentCards = document.querySelectorAll('.moment-card');
+  momentCards.forEach((momentCard, idx) => {
+    const handleMomentOpen = (e) => {
+      if (momentMoved > 10) return;
+      const items = Array.from(momentCards).map(getCardData);
+      openLightbox(items, idx);
+    };
+
+    momentCard.addEventListener('click', handleMomentOpen);
+    momentCard.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleMomentOpen(e);
       }
     });
   });
 
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-  if (lightboxNext) lightboxNext.addEventListener('click', showNextImage);
-  if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevImage);
+  if (lightboxNext) lightboxNext.addEventListener('click', showNextLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevLightbox);
 
   // Close on backdrop click
   if (lightboxModal) {
@@ -292,16 +508,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Keyboard navigation for Lightbox
+  // Keyboard navigation & Focus Trapping for Lightbox
   document.addEventListener('keydown', (e) => {
     if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
 
     if (e.key === 'Escape') {
       closeLightbox();
     } else if (e.key === 'ArrowRight') {
-      showNextImage();
+      showNextLightbox();
     } else if (e.key === 'ArrowLeft') {
-      showPrevImage();
+      showPrevLightbox();
+    } else if (e.key === 'Tab') {
+      // Focus trap within modal
+      const focusableElements = [lightboxClose, lightboxPrev, lightboxNext].filter(Boolean);
+      const firstEl = focusableElements[0];
+      const lastEl = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
     }
   });
 
@@ -323,11 +556,11 @@ document.addEventListener('DOMContentLoaded', () => {
       (e) => {
         touchEndX = e.changedTouches[0].screenX;
         const diffX = touchEndX - touchStartX;
-        if (Math.abs(diffX) > 45) {
+        if (Math.abs(diffX) > 40) {
           if (diffX > 0) {
-            showPrevImage();
+            showPrevLightbox();
           } else {
-            showNextImage();
+            showNextLightbox();
           }
         }
       },
@@ -336,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     7. QUICK COPY EMAIL TO CLIPBOARD WITH TOAST FEEDBACK
+     10. QUICK COPY EMAIL TO CLIPBOARD WITH TOAST FEEDBACK
      -------------------------------------------------------------------------- */
   const copyEmailBtn = document.getElementById('quick-copy-email');
   const toastMsg = document.getElementById('toast-msg');
@@ -348,7 +581,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           await navigator.clipboard.writeText(email);
         } else {
-          // Fallback for older browsers
           const tempInput = document.createElement('input');
           tempInput.value = email;
           document.body.appendChild(tempInput);
@@ -369,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     8. DYNAMIC COPYRIGHT YEAR
+     11. DYNAMIC COPYRIGHT YEAR
      -------------------------------------------------------------------------- */
   const yearElement = document.getElementById('current-year');
   if (yearElement) {

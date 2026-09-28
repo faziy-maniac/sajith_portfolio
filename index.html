@@ -18,21 +18,21 @@
   <meta property="og:url" content="https://mohammed-sajith-g.netlify.app/">
   <meta property="og:title" content="Mohammed Sajith G | Professional Footballer">
   <meta property="og:description" content="Professional footballer. Learning to code. Playing to win. Explore the matchday portfolio of Mohammed Sajith G.">
-  <meta property="og:image" content="assets/images/profile.jpg">
+  <meta property="og:image" content="assets/images/football-01.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mohammed Sajith G | Professional Footballer">
   <meta name="twitter:description" content="Professional footballer. Learning to code. Playing to win. Explore the matchday portfolio of Mohammed Sajith G.">
-  <meta name="twitter:image" content="assets/images/profile.jpg">
+  <meta name="twitter:image" content="assets/images/football-01.jpg">
 
   <!-- Favicon: Football Emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
 
-  <!-- Google Fonts: Bebas Neue (Condensed Matchday Display) & Inter (Clean UI Sans) -->
+  <!-- Google Fonts: Bebas Neue (Condensed Stadium Display), Bricolage Grotesque (Neo-Editorial), & Inter (Clean UI Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -65,6 +65,7 @@
       <nav id="site-navigation" role="navigation" aria-label="Main Navigation">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link active">Kickoff</a></li>
+          <li><a href="#moments" class="nav-link">Moments</a></li>
           <li><a href="#player-card" class="nav-link">Player Card</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#career" class="nav-link">Fixtures</a></li>
@@ -150,27 +151,250 @@
           </div>
         </div>
 
-        <!-- Hero Stadium Frame Photo -->
+        <!-- Hero Stadium Frame Photo & Action Polaroid Collage -->
         <div class="hero-visual sub-slide-in">
-          <div class="stadium-frame-wrapper">
-            <div class="stadium-frame">
-              <img 
-                src="assets/images/profile.jpg" 
-                alt="Mohammed Sajith G - Professional Footballer Portrait" 
-                class="hero-profile-img"
-                loading="eager"
-                onerror="handleImageError(this)"
-              >
-              <div class="stadium-glass-overlay"></div>
-              <div class="stadium-badge-ribbon">
-                <div class="ribbon-info">
-                  <h4>M. SAJITH G</h4>
-                  <p>Central Midfielder &bull; Playmaker</p>
+          <div class="hero-collage" id="hero-collage" aria-label="Mohammed Sajith G matchday collage">
+            <!-- Polaroid 1: Sajith with ball on pitch (angled polaroid) -->
+            <div class="collage-item polaroid-card polaroid-1" data-parallax-depth="0.05">
+              <div class="polaroid-frame">
+                <img 
+                  src="assets/images/football-01-thumb.jpg" 
+                  alt="Mohammed Sajith G in navy AMS jersey standing confident with football on pitch" 
+                  class="polaroid-img"
+                  width="400"
+                  height="533"
+                  loading="eager"
+                  onerror="handleImageError(this)"
+                >
+                <div class="polaroid-badge">#17</div>
+                <div class="polaroid-caption">Match 01 &bull; Kickoff</div>
+              </div>
+            </div>
+
+            <!-- Polaroid 2: High Tempo Sprint action shot -->
+            <div class="collage-item polaroid-card polaroid-2" data-parallax-depth="-0.04">
+              <div class="polaroid-frame">
+                <img 
+                  src="assets/images/football-03-thumb.jpg" 
+                  alt="Sajith sprinting after loose ball during high-tempo competitive match play" 
+                  class="polaroid-img"
+                  width="400"
+                  height="533"
+                  loading="eager"
+                  onerror="handleImageError(this)"
+                >
+                <div class="polaroid-badge">#19</div>
+                <div class="polaroid-caption">High-Tempo Sprint</div>
+              </div>
+            </div>
+
+            <!-- Polaroid 3: Championship Victory & Trophy -->
+            <div class="collage-item polaroid-card polaroid-3" data-parallax-depth="0.06">
+              <div class="polaroid-frame">
+                <img 
+                  src="assets/images/football-02-thumb.jpg" 
+                  alt="Sajith celebrating tournament victory with trophy and certificate" 
+                  class="polaroid-img"
+                  width="400"
+                  height="711"
+                  loading="eager"
+                  onerror="handleImageError(this)"
+                >
+                <div class="polaroid-badge">#30</div>
+                <div class="polaroid-caption">Championship Trophy</div>
+              </div>
+            </div>
+
+            <!-- Centerpiece: Main Profile Stadium Frame -->
+            <div class="stadium-frame-wrapper collage-main" data-parallax-depth="0.02">
+              <div class="stadium-frame">
+                <img 
+                  src="assets/images/profile.jpg" 
+                  alt="Mohammed Sajith G - Professional Footballer Portrait" 
+                  class="hero-profile-img"
+                  width="440"
+                  height="520"
+                  loading="eager"
+                  onerror="handleImageError(this)"
+                >
+                <div class="stadium-glass-overlay"></div>
+                <div class="stadium-badge-ribbon">
+                  <div class="ribbon-info">
+                    <h4>M. SAJITH G</h4>
+                    <p>Central Midfielder &bull; Playmaker</p>
+                  </div>
+                  <div class="ribbon-num">#19</div>
                 </div>
-                <div class="ribbon-num">#19</div>
               </div>
             </div>
           </div>
+
+          <!-- Signature Matchday Conversation (Fazii Style) -->
+          <div class="chat" aria-label="A short matchday introduction as a conversation">
+            <div class="bubble them">Who is commanding the pitch?</div>
+            <div class="bubble me">Mohammed Sajith, midfield playmaker.</div>
+            <div class="bubble them">What drives your game?</div>
+            <div class="bubble me lime">Vision, relentless stamina, and learning to code.</div>
+            <div class="bubble them">Matchday kickoff? Let's win.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MATCHDAY MOMENTS: HORIZONTALLY SCROLLING FILM-STRIP
+         ========================================================================== -->
+    <section id="moments" class="section matchday-moments-section" aria-label="Matchday Moments Film-strip">
+      <div class="pitch-bg-pattern" aria-hidden="true">
+        <svg class="pitch-lines-svg" viewBox="0 0 1200 400">
+          <line x1="0" y1="200" x2="1200" y2="200" stroke-width="1.5" />
+          <circle cx="600" cy="200" r="120" stroke-width="1.5" />
+        </svg>
+      </div>
+
+      <div class="container moments-container">
+        <div class="moments-header-row sub-slide-in">
+          <div>
+            <div class="section-tag">Live Match Broadcast</div>
+            <h2 class="section-title moments-heading">MATCHDAY <span>MOMENTS</span></h2>
+            <p class="section-subtitle">
+              Match highlights, intense transition sprints, and victory podiums captured on pitch. Drag, swipe, or click to inspect.
+            </p>
+          </div>
+          <!-- Filmstrip Scroll Arrow Controls -->
+          <div class="moments-nav-controls" aria-label="Filmstrip scroll navigation">
+            <button class="moments-arrow-btn" id="moments-prev" aria-label="Scroll moments left" title="Scroll left">
+              &larr;
+            </button>
+            <button class="moments-arrow-btn" id="moments-next" aria-label="Scroll moments right" title="Scroll right">
+              &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Full-Width Horizontally Scrolling Film Strip Track -->
+        <div class="moments-filmstrip-wrapper sub-slide-in">
+          <!-- Film Sprocket Decorative Borders -->
+          <div class="filmstrip-sprockets top" aria-hidden="true"></div>
+
+          <div class="moments-track" id="moments-track" tabindex="0" role="region" aria-label="Matchday moments filmstrip">
+            <!-- Moment 1: Kickoff Match -->
+            <article class="moment-card" tabindex="0" role="button" aria-label="View Match 01 kickoff moment in lightbox" data-full="assets/images/football-01.jpg">
+              <div class="moment-img-wrapper">
+                <img 
+                  src="assets/images/football-01-thumb.jpg" 
+                  alt="Mohammed Sajith G standing poised in navy jersey #17 with ball on pitch" 
+                  class="moment-img"
+                  width="600" 
+                  height="800"
+                  loading="lazy"
+                  onerror="handleImageError(this)"
+                >
+                <div class="moment-badge">#17</div>
+                <div class="moment-cam-tag">LIVE ● CAM 01</div>
+              </div>
+              <div class="moment-overlay">
+                <span class="moment-category-pill">Match 01</span>
+                <!-- PLACEHOLDER CAPTION (Editable) -->
+                <h3 class="moment-title">Pre-Kickoff Midfield Command</h3>
+                <p class="moment-sub">League Campaign &bull; Starting XI</p>
+              </div>
+            </article>
+
+            <!-- Moment 2: Sprint Action -->
+            <article class="moment-card" tabindex="0" role="button" aria-label="View Match 02 counter sprint moment in lightbox" data-full="assets/images/football-03.jpg">
+              <div class="moment-img-wrapper">
+                <img 
+                  src="assets/images/football-03-thumb.jpg" 
+                  alt="Sajith sprinting after loose ball during high tempo match play" 
+                  class="moment-img"
+                  width="600" 
+                  height="800"
+                  loading="lazy"
+                  onerror="handleImageError(this)"
+                >
+                <div class="moment-badge">#19</div>
+                <div class="moment-cam-tag">REPLAY ● CAM 02</div>
+              </div>
+              <div class="moment-overlay">
+                <span class="moment-category-pill">Match 02</span>
+                <!-- PLACEHOLDER CAPTION (Editable) -->
+                <h3 class="moment-title">High-Tempo Transition Sprint</h3>
+                <p class="moment-sub">Knockout Stage &bull; Ball Recovery</p>
+              </div>
+            </article>
+
+            <!-- Moment 3: Trophy Final -->
+            <article class="moment-card" tabindex="0" role="button" aria-label="View Match 03 trophy lift moment in lightbox" data-full="assets/images/football-02.jpg">
+              <div class="moment-img-wrapper">
+                <img 
+                  src="assets/images/football-02-thumb.jpg" 
+                  alt="Sajith holding championship tournament trophy and certificate on the field" 
+                  class="moment-img"
+                  width="600" 
+                  height="1067"
+                  loading="lazy"
+                  onerror="handleImageError(this)"
+                >
+                <div class="moment-badge">#30</div>
+                <div class="moment-cam-tag">PODIUM ● CAM 03</div>
+              </div>
+              <div class="moment-overlay">
+                <span class="moment-category-pill">Match 03</span>
+                <!-- PLACEHOLDER CAPTION (Editable) -->
+                <h3 class="moment-title">Championship Trophy &amp; Medal</h3>
+                <p class="moment-sub">Final Whistle &bull; Gold Medal</p>
+              </div>
+            </article>
+
+            <!-- Moment 4: Team Celebration -->
+            <article class="moment-card" tabindex="0" role="button" aria-label="View team stage ceremony moment in lightbox" data-full="assets/images/football-04.jpg">
+              <div class="moment-img-wrapper">
+                <img 
+                  src="assets/images/football-04-thumb.jpg" 
+                  alt="AMS football squad celebrating championship trophy on stage with medals" 
+                  class="moment-img"
+                  width="600" 
+                  height="338"
+                  loading="lazy"
+                  onerror="handleImageError(this)"
+                >
+                <div class="moment-badge">#19</div>
+                <div class="moment-cam-tag">CEREMONY ● CAM 04</div>
+              </div>
+              <div class="moment-overlay">
+                <span class="moment-category-pill">Team</span>
+                <!-- PLACEHOLDER CAPTION (Editable) -->
+                <h3 class="moment-title">Squad Trophy Presentation</h3>
+                <p class="moment-sub">Tournament Honor &bull; Team Glory</p>
+              </div>
+            </article>
+
+            <!-- Moment 5: Award Handover -->
+            <article class="moment-card" tabindex="0" role="button" aria-label="View certificate presentation moment in lightbox" data-full="assets/images/football-05.jpg">
+              <div class="moment-img-wrapper">
+                <img 
+                  src="assets/images/football-05-thumb.jpg" 
+                  alt="Sajith receiving tournament certificate from coaches and officials" 
+                  class="moment-img"
+                  width="600" 
+                  height="1200"
+                  loading="lazy"
+                  onerror="handleImageError(this)"
+                >
+                <div class="moment-badge">#19</div>
+                <div class="moment-cam-tag">HONOR ● CAM 05</div>
+              </div>
+              <div class="moment-overlay">
+                <span class="moment-category-pill">Presentation</span>
+                <!-- PLACEHOLDER CAPTION (Editable) -->
+                <h3 class="moment-title">Official Recognition &amp; Award</h3>
+                <p class="moment-sub">Athletic Directorate &bull; Honor</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="filmstrip-sprockets bottom" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -217,9 +441,11 @@
               <!-- Player Photo Frame -->
               <div class="card-photo-wrapper">
                 <img 
-                  src="assets/images/profile.jpg" 
-                  alt="Mohammed Sajith G card photo" 
+                  src="assets/images/football-06.jpg" 
+                  alt="Mohammed Sajith G close-up player card portrait" 
                   class="card-photo"
+                  width="220"
+                  height="220"
                   loading="lazy"
                   onerror="handleImageError(this)"
                 >
@@ -361,7 +587,7 @@
 
           <!-- Quick Facts Column -->
           <div class="facts-card-container sub-slide-in">
-            <div class="fact-box">
+            <div class="fact-box featured">
               <div class="fact-icon-badge" aria-hidden="true">⚽</div>
               <div class="fact-content">
                 <h4>Profession</h4>
@@ -519,80 +745,363 @@
     <!-- ==========================================================================
          SECTION 5: GALLERY
          ========================================================================== -->
-    <section id="gallery" class="section" aria-label="Photo Gallery">
+    <!-- ==========================================================================
+         SECTION 5: GALLERY (MASONRY GRID & SCOREBOARD FILTER CHIPS)
+         ========================================================================== -->
+    <section id="gallery" class="section gallery-section" aria-label="Photo Gallery">
+      <div class="pitch-bg-pattern" aria-hidden="true">
+        <svg class="pitch-lines-svg" viewBox="0 0 1200 800">
+          <circle cx="600" cy="400" r="220" stroke-width="1.2" />
+          <line x1="600" y1="0" x2="600" y2="800" stroke-width="1.2" />
+        </svg>
+      </div>
+
       <div class="container">
         <div class="section-header sub-slide-in">
-          <div class="section-tag">Matchday Action &bull; Gallery</div>
-          <h2 class="section-title">In The <span>Arena</span></h2>
+          <div class="section-tag">Matchday Archive &bull; High Definition</div>
+          <h2 class="section-title">MATCHDAY <span>GALLERY</span></h2>
           <p class="section-subtitle">
-            Match highlights, training intensity, and official portraits. Click any photo to view in high definition with arrow key or swipe navigation.
+            Match highlights, tactical pitch sessions, and championship honors. Filter by category, inspect replay overlays, or click any photo for fullscreen lightbox viewer.
           </p>
+
+          <!-- Scoreboard Live Photo Counter -->
+          <div class="scoreboard-counter-banner" aria-label="Gallery photo scoreboard counter">
+            <div class="scoreboard-led-display">
+              <span class="led-dot pulse" aria-hidden="true"></span>
+              <span class="scoreboard-counter-label">PHOTOS:</span>
+              <span id="gallery-counter" class="scoreboard-counter-val" data-target="5">5</span>
+            </div>
+            <div class="scoreboard-status-chip">
+              <span class="scoreboard-clock" aria-hidden="true">90:00+</span>
+              <span id="scoreboard-filter-status">FILTER: MATCHES</span>
+            </div>
+          </div>
+
+          <!-- Category Filter Chips (Default: Matches) -->
+          <div class="gallery-filter-chips" role="tablist" aria-label="Gallery category filters">
+            <button type="button" class="filter-chip active" data-filter="matches" role="tab" aria-selected="true">
+              <span class="chip-status-dot" aria-hidden="true"></span>
+              <span>Matches</span>
+              <span class="chip-count">5</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="training" role="tab" aria-selected="false">
+              <span class="chip-status-dot" aria-hidden="true"></span>
+              <span>Training</span>
+              <span class="chip-count">2</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="team" role="tab" aria-selected="false">
+              <span class="chip-status-dot" aria-hidden="true"></span>
+              <span>Team</span>
+              <span class="chip-count">6</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="all" role="tab" aria-selected="false">
+              <span class="chip-status-dot" aria-hidden="true"></span>
+              <span>All</span>
+              <span class="chip-count">13</span>
+            </button>
+          </div>
         </div>
 
-        <div class="gallery-grid sub-slide-in" role="region" aria-label="Image Grid">
-          <!-- Gallery Item 1: Profile Shot -->
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View official portrait in lightbox">
-            <img 
-              src="assets/images/profile.jpg" 
-              alt="Mohammed Sajith G - Official Player Portrait" 
-              class="gallery-img"
-              loading="lazy"
-              onerror="handleImageError(this)"
-            >
-            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Official Media Day</span>
-              <h3 class="gallery-caption">Mohammed Sajith G &bull; Portrait</h3>
+        <!-- Masonry Grid with 13 Football Photos -->
+        <div class="gallery-masonry-grid sub-slide-in" id="gallery-grid" role="region" aria-label="Matchday Photo Grid">
+          <!-- Item 1: Matches (football-01) -->
+          <article class="gallery-card" data-category="matches" tabindex="0" role="button" aria-label="View Matchday 01 in lightbox" data-full="assets/images/football-01.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-01-thumb.jpg" 
+                alt="Mohammed Sajith G in navy AMS jersey standing confident with football on pitch" 
+                class="gallery-img"
+                width="600" 
+                height="800"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#17</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">LIVE REPLAY ● CAM 01</div>
+                <span class="gallery-cat-tag">Matches</span>
+                <h3 class="gallery-caption">Pre-Kickoff Midfield Command</h3>
+                <p class="gallery-meta">League Fixture &bull; Starting XI</p>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Gallery Item 2: Strike Action Shot -->
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View matchday strike in lightbox">
-            <img 
-              src="assets/images/action-1.jpg" 
-              alt="Midfield strike and goal attempt under stadium floodlights" 
-              class="gallery-img"
-              loading="lazy"
-              onerror="handleImageError(this)"
-            >
-            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Matchday Action</span>
-              <h3 class="gallery-caption">Strike Under The Floodlights</h3>
+          <!-- Item 2: Team (football-02) -->
+          <article class="gallery-card" data-category="team" tabindex="0" role="button" aria-label="View Championship Trophy in lightbox" data-full="assets/images/football-02.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-02-thumb.jpg" 
+                alt="Sajith holding championship tournament trophy and certificate on the field" 
+                class="gallery-img"
+                width="600" 
+                height="1067"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#30</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">PODIUM ● CAM 02</div>
+                <span class="gallery-cat-tag">Team</span>
+                <h3 class="gallery-caption">Championship Trophy &amp; Medal</h3>
+                <p class="gallery-meta">Tournament Final &bull; Gold Medal</p>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Gallery Item 3: Sprint Action Shot -->
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View sprint transition in lightbox">
-            <img 
-              src="assets/images/action-2.jpg" 
-              alt="High tempo transition and sprint with the ball" 
-              class="gallery-img"
-              loading="lazy"
-              onerror="handleImageError(this)"
-            >
-            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Transition Play</span>
-              <h3 class="gallery-caption">High-Tempo Counter Sprint</h3>
+          <!-- Item 3: Matches (football-03) -->
+          <article class="gallery-card" data-category="matches" tabindex="0" role="button" aria-label="View Transition Sprint in lightbox" data-full="assets/images/football-03.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-03-thumb.jpg" 
+                alt="Sajith sprinting after loose ball during high-tempo competitive match play" 
+                class="gallery-img"
+                width="600" 
+                height="800"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">LIVE REPLAY ● CAM 03</div>
+                <span class="gallery-cat-tag">Matches</span>
+                <h3 class="gallery-caption">High-Tempo Transition Sprint</h3>
+                <p class="gallery-meta">Knockout Match &bull; Ball Recovery</p>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Gallery Item 4: Tactical Focus Action Shot -->
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View tactical set-piece in lightbox">
-            <img 
-              src="assets/images/action-3.jpg" 
-              alt="Tactical midfield discipline and set-piece focus" 
-              class="gallery-img"
-              loading="lazy"
-              onerror="handleImageError(this)"
-            >
-            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Matchday Focus</span>
-              <h3 class="gallery-caption">Midfield Tactical Vision</h3>
+          <!-- Item 4: Team (football-04) -->
+          <article class="gallery-card" data-category="team" tabindex="0" role="button" aria-label="View Squad Trophy Presentation in lightbox" data-full="assets/images/football-04.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-04-thumb.jpg" 
+                alt="AMS football squad celebrating championship trophy on stage with medals and certificates" 
+                class="gallery-img"
+                width="600" 
+                height="338"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">CEREMONY ● CAM 04</div>
+                <span class="gallery-cat-tag">Team</span>
+                <h3 class="gallery-caption">Squad Trophy Presentation</h3>
+                <p class="gallery-meta">Championship Stage &bull; Team Glory</p>
+              </div>
             </div>
-          </div>
+          </article>
+
+          <!-- Item 5: Team (football-05) -->
+          <article class="gallery-card" data-category="team" tabindex="0" role="button" aria-label="View Certificate Handover in lightbox" data-full="assets/images/football-05.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-05-thumb.jpg" 
+                alt="Sajith receiving tournament certificate from coaches and athletic officials" 
+                class="gallery-img"
+                width="600" 
+                height="1200"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">HONOR ● CAM 05</div>
+                <span class="gallery-cat-tag">Team</span>
+                <h3 class="gallery-caption">Award Ceremony Presentation</h3>
+                <p class="gallery-meta">Athletic Directorate &bull; Felicitation</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6: Matches (football-06) -->
+          <article class="gallery-card" data-category="matches" tabindex="0" role="button" aria-label="View Midfield Playmaker Portrait in lightbox" data-full="assets/images/football-06.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-06-thumb.jpg" 
+                alt="Close-up portrait of Mohammed Sajith G in navy jersey on match pitch" 
+                class="gallery-img"
+                width="600" 
+                height="600"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#17</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">FOCUS ● CAM 06</div>
+                <span class="gallery-cat-tag">Matches</span>
+                <h3 class="gallery-caption">Midfield Playmaker Portrait</h3>
+                <p class="gallery-meta">Matchday Focus &bull; Pitch-side</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 7: Team (football-07) -->
+          <article class="gallery-card" data-category="team" tabindex="0" role="button" aria-label="View Trophy Showcase in lightbox" data-full="assets/images/football-07.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-07-thumb.jpg" 
+                alt="Close-up of Sajith holding tournament winner trophy and medal with certificate" 
+                class="gallery-img"
+                width="600" 
+                height="600"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#30</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">VICTORY ● CAM 07</div>
+                <span class="gallery-cat-tag">Team</span>
+                <h3 class="gallery-caption">Trophy Showcase &amp; Certificate</h3>
+                <p class="gallery-meta">Tournament Winner &bull; MVP Honor</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 8: Training (football-08) -->
+          <article class="gallery-card" data-category="training" tabindex="0" role="button" aria-label="View Goalmouth Drill in lightbox" data-full="assets/images/football-08.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-08-thumb.jpg" 
+                alt="Action crop of match contest with goalkeeper and midfielders competing for possession" 
+                class="gallery-img"
+                width="600" 
+                height="450"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">DRILL ● CAM 08</div>
+                <span class="gallery-cat-tag">Training</span>
+                <h3 class="gallery-caption">Goalmouth Press &amp; Box Contest</h3>
+                <p class="gallery-meta">Tactical Drill &bull; Set-Piece Defense</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 9: Team (football-09) -->
+          <article class="gallery-card" data-category="team" tabindex="0" role="button" aria-label="View Podium Trophy Hoist in lightbox" data-full="assets/images/football-09.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-09-thumb.jpg" 
+                alt="Football team captain and coaches hoisting championship trophy on stage" 
+                class="gallery-img"
+                width="600" 
+                height="450"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">STAGE ● CAM 09</div>
+                <span class="gallery-cat-tag">Team</span>
+                <h3 class="gallery-caption">Podium Celebration &amp; Trophy Hoist</h3>
+                <p class="gallery-meta">Tournament Champions &bull; Stage Finale</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 10: Team (football-10) -->
+          <article class="gallery-card" data-category="team" tabindex="0" role="button" aria-label="View Athletic Recognition Handover in lightbox" data-full="assets/images/football-10.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/football-10-thumb.jpg" 
+                alt="Tournament organizers and athletic directors presenting certificate to Sajith" 
+                class="gallery-img"
+                width="600" 
+                height="600"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">HONOR ● CAM 10</div>
+                <span class="gallery-cat-tag">Team</span>
+                <h3 class="gallery-caption">Athletic Recognition Handover</h3>
+                <p class="gallery-meta">Sports Directorate &bull; Certificate</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 11: Matches (action-1) -->
+          <article class="gallery-card" data-category="matches" tabindex="0" role="button" aria-label="View Strike Under Floodlights in lightbox" data-full="assets/images/action-1.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/action-1-thumb.jpg" 
+                alt="Midfield strike and goal attempt under stadium floodlights" 
+                class="gallery-img"
+                width="600" 
+                height="450"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">ACTION ● CAM 11</div>
+                <span class="gallery-cat-tag">Matches</span>
+                <h3 class="gallery-caption">Strike Under The Floodlights</h3>
+                <p class="gallery-meta">Match Action &bull; Long-Range Effort</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 12: Matches (action-2) -->
+          <article class="gallery-card" data-category="matches" tabindex="0" role="button" aria-label="View Counter Attack in lightbox" data-full="assets/images/action-2.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/action-2-thumb.jpg" 
+                alt="High tempo transition and sprint with the ball through midfield" 
+                class="gallery-img"
+                width="600" 
+                height="450"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">ACTION ● CAM 12</div>
+                <span class="gallery-cat-tag">Matches</span>
+                <h3 class="gallery-caption">Counter Attack Transition</h3>
+                <p class="gallery-meta">Box-to-Box Sprint &bull; Pace</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 13: Training (action-3) -->
+          <article class="gallery-card" data-category="training" tabindex="0" role="button" aria-label="View Tactical Drill in lightbox" data-full="assets/images/action-3.jpg">
+            <div class="gallery-media-frame">
+              <img 
+                src="assets/images/action-3-thumb.jpg" 
+                alt="Tactical midfield discipline and set-piece training positioning" 
+                class="gallery-img"
+                width="600" 
+                height="450"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              >
+              <div class="gallery-jersey-badge">#19</div>
+              <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+              <div class="gallery-replay-overlay">
+                <div class="replay-cam-tag">TACTIC ● CAM 13</div>
+                <span class="gallery-cat-tag">Training</span>
+                <h3 class="gallery-caption">Tactical Set-Piece Positioning</h3>
+                <p class="gallery-meta">Training Ground &bull; Spatial Discipline</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -814,7 +1323,20 @@
     <!-- ==========================================================================
          SECTION 8: CONTACT
          ========================================================================== -->
-    <section id="contact" class="section section-darker" aria-label="Contact Section">
+    <section id="contact" class="section section-darker contact-section-wrapper" aria-label="Contact Section">
+      <!-- Pitch photo background with heavily darkened green gradient overlay and low opacity -->
+      <div class="contact-section-bg" aria-hidden="true">
+        <img 
+          src="assets/images/football-03.jpg" 
+          alt="" 
+          class="contact-bg-photo" 
+          loading="lazy" 
+          width="1600" 
+          height="1200"
+        >
+        <div class="contact-bg-overlay"></div>
+      </div>
+
       <div class="container contact-container">
         <div class="contact-card sub-slide-in">
           <div class="section-tag" style="margin-bottom: 20px;">Kickoff The Conversation</div>
