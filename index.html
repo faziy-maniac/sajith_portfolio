@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>Mohammed Sajith G | Professional Footballer</title>
+  <meta name="title" content="Mohammed Sajith G | Professional Footballer">
+  <meta name="description" content="Official personal portfolio of Mohammed Sajith G — professional footballer, midfield engine, and passionate programmer. Discover his career fixtures, player card, skills, and coding journey.">
+  <meta name="keywords" content="Mohammed Sajith G, Footballer, Midfielder, Athlete, Soccer, Coding, Web Development, Portfolio">
+  <meta name="author" content="Mohammed Sajith G">
+  <meta name="theme-color" content="#0B3D2E">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohammed-sajith-g.netlify.app/">
+  <meta property="og:title" content="Mohammed Sajith G | Professional Footballer">
+  <meta property="og:description" content="Professional footballer. Learning to code. Playing to win. Explore the matchday portfolio of Mohammed Sajith G.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mohammed Sajith G | Professional Footballer">
+  <meta name="twitter:description" content="Professional footballer. Learning to code. Playing to win. Explore the matchday portfolio of Mohammed Sajith G.">
+  <meta name="twitter:image" content="assets/images/profile.jpg">
+
+  <!-- Favicon: Football Emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+
+  <!-- Google Fonts: Bebas Neue (Condensed Matchday Display) & Inter (Clean UI Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
+  <!-- Pitch Scroll Progress Bar -->
+  <div id="pitch-progress-container" aria-hidden="true">
+    <div id="pitch-progress-bar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       STICKY MATCHDAY NAVBAR
+       ========================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <a href="#hero" class="brand-badge" aria-label="Mohammed Sajith G Home">
+        <div class="brand-crest">
+          <span class="jersey-num">19</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">M. SAJITH G</span>
+          <span class="brand-tag">PRO FOOTBALLER</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav id="site-navigation" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Kickoff</a></li>
+          <li><a href="#player-card" class="nav-link">Player Card</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#career" class="nav-link">Fixtures</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#skills" class="nav-link">Squad Skills</a></li>
+          <li><a href="#off-pitch" class="nav-link">Off The Pitch</a></li>
+          <li><a href="#contact" class="nav-cta">Contact Me ⚽</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         SECTION 1: HERO
+         ========================================================================== -->
+    <section id="hero" class="hero-section" aria-label="Hero Introduction">
+      <!-- Jersey Number Watermark -->
+      <div class="hero-watermark" aria-hidden="true">19</div>
+
+      <!-- Pitch Line SVG Background Decor -->
+      <div class="pitch-bg-pattern" aria-hidden="true">
+        <svg class="pitch-lines-svg" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <!-- Center Circle & Halfway Line -->
+          <line x1="600" y1="0" x2="600" y2="800" stroke-width="2" />
+          <circle cx="600" cy="400" r="140" stroke-width="2" />
+          <circle cx="600" cy="400" r="4" fill="rgba(182, 242, 60, 0.6)" />
+          <!-- Subtle Penalty Box Silhouette -->
+          <rect x="0" y="200" width="220" height="400" stroke-width="1.5" />
+          <rect x="980" y="200" width="220" height="400" stroke-width="1.5" />
+        </svg>
+      </div>
+
+      <!-- Floodlight Glows -->
+      <div class="floodlight-cone left" aria-hidden="true"></div>
+      <div class="floodlight-cone right" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <!-- Hero Text Content -->
+        <div class="hero-content sub-slide-in">
+          <div class="match-status-badge">
+            <div class="live-indicator">
+              <span class="live-pulse"></span>
+              MATCHDAY READY
+            </div>
+            <span class="match-spec">JERSEY #19 &bull; MIDFIELDER</span>
+          </div>
+
+          <h1 class="hero-title">
+            MOHAMMED <span class="accent-name">SAJITH G</span>
+          </h1>
+
+          <p class="hero-tagline">
+            "Professional footballer. <span>Learning to code.</span> Playing to win."
+          </p>
+
+          <p class="hero-subtext">
+            Commanding the midfield through vision, tactical anticipation, and relentless stamina on matchday—while channeling that same analytical mindset, work ethic, and dedication into software engineering off the pitch.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <span>Contact Me</span>
+              <span class="btn-icon">⚽</span>
+            </a>
+            <a href="#about" class="btn btn-secondary">
+              <span>My Journey</span>
+              <span class="btn-icon">➔</span>
+            </a>
+          </div>
+
+          <!-- Subtle Rolling / Bouncing Football Animation -->
+          <div class="hero-ball-container" aria-label="Animated match ball decoration">
+            <span class="animated-football" aria-hidden="true">⚽</span>
+            <span>Match tempo in motion &bull; Precision &amp; Vision</span>
+          </div>
+        </div>
+
+        <!-- Hero Stadium Frame Photo -->
+        <div class="hero-visual sub-slide-in">
+          <div class="stadium-frame-wrapper">
+            <div class="stadium-frame">
+              <img 
+                src="assets/images/profile.jpg" 
+                alt="Mohammed Sajith G - Professional Footballer Portrait" 
+                class="hero-profile-img"
+                loading="eager"
+                onerror="handleImageError(this)"
+              >
+              <div class="stadium-glass-overlay"></div>
+              <div class="stadium-badge-ribbon">
+                <div class="ribbon-info">
+                  <h4>M. SAJITH G</h4>
+                  <p>Central Midfielder &bull; Playmaker</p>
+                </div>
+                <div class="ribbon-num">#19</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: PLAYER CARD (EA FC / FIFA STYLE)
+         ========================================================================== -->
+    <section id="player-card" class="section section-darker" aria-label="Player Card">
+      <div class="pitch-bg-pattern" aria-hidden="true">
+        <svg class="pitch-lines-svg" viewBox="0 0 1000 600">
+          <circle cx="500" cy="300" r="180" stroke-width="1.5" />
+          <line x1="500" y1="0" x2="500" y2="600" stroke-width="1.5" />
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="section-header sub-slide-in">
+          <div class="section-tag">Official Match Rating</div>
+          <h2 class="section-title">Ultimate <span>Player Card</span></h2>
+          <p class="section-subtitle">
+            Tactical attributes and key match ratings evaluated for midfield dominance and high-tempo transition play.
+          </p>
+        </div>
+
+        <div class="player-card-container sub-slide-in">
+          <!-- EA FC / FIFA Style Ultimate Player Card -->
+          <article class="fifa-card" aria-label="FIFA Style Player Card for Mohammed Sajith G">
+            <!-- Hologram Light Sheen -->
+            <div class="card-holo-sheen" aria-hidden="true"></div>
+
+            <!-- Card Top Header -->
+            <div class="card-top">
+              <div class="card-rating-block">
+                <!-- PLACEHOLDER: Overall Rating (Editable) -->
+                <span class="card-overall">88</span>
+                <!-- PLACEHOLDER: Position (Editable) -->
+                <span class="card-pos">CM</span>
+                <div class="card-nation-club">
+                  <span class="card-jersey-chip">#19</span>
+                  <span class="card-club-badge" title="Club Footballer">⚽</span>
+                </div>
+              </div>
+
+              <!-- Player Photo Frame -->
+              <div class="card-photo-wrapper">
+                <img 
+                  src="assets/images/profile.jpg" 
+                  alt="Mohammed Sajith G card photo" 
+                  class="card-photo"
+                  loading="lazy"
+                  onerror="handleImageError(this)"
+                >
+              </div>
+            </div>
+
+            <!-- Player Name -->
+            <div class="card-player-name">
+              <h3>M. SAJITH</h3>
+            </div>
+
+            <div class="card-divider-line" aria-hidden="true"></div>
+
+            <!-- Attribute Bars (Editable Placeholders) -->
+            <div class="card-attributes-grid">
+              <!-- Pace Attribute -->
+              <div class="card-attr-item">
+                <div class="attr-meta">
+                  <span class="attr-code">PAC</span>
+                  <span class="attr-val">86</span>
+                </div>
+                <div class="attr-progress-track">
+                  <div class="attr-progress-fill" style="width: 86%;"></div>
+                </div>
+              </div>
+
+              <!-- Passing Attribute -->
+              <div class="card-attr-item">
+                <div class="attr-meta">
+                  <span class="attr-code">PAS</span>
+                  <span class="attr-val">89</span>
+                </div>
+                <div class="attr-progress-track">
+                  <div class="attr-progress-fill" style="width: 89%;"></div>
+                </div>
+              </div>
+
+              <!-- Stamina Attribute -->
+              <div class="card-attr-item">
+                <div class="attr-meta">
+                  <span class="attr-code">STA</span>
+                  <span class="attr-val">92</span>
+                </div>
+                <div class="attr-progress-track">
+                  <div class="attr-progress-fill" style="width: 92%;"></div>
+                </div>
+              </div>
+
+              <!-- Teamwork Attribute -->
+              <div class="card-attr-item">
+                <div class="attr-meta">
+                  <span class="attr-code">TEA</span>
+                  <span class="attr-val">94</span>
+                </div>
+                <div class="attr-progress-track">
+                  <div class="attr-progress-fill" style="width: 94%;"></div>
+                </div>
+              </div>
+
+              <!-- Vision Attribute -->
+              <div class="card-attr-item">
+                <div class="attr-meta">
+                  <span class="attr-code">VIS</span>
+                  <span class="attr-val">88</span>
+                </div>
+                <div class="attr-progress-track">
+                  <div class="attr-progress-fill" style="width: 88%;"></div>
+                </div>
+              </div>
+
+              <!-- Dribbling Attribute -->
+              <div class="card-attr-item">
+                <div class="attr-meta">
+                  <span class="attr-code">DRI</span>
+                  <span class="attr-val">85</span>
+                </div>
+                <div class="attr-progress-track">
+                  <div class="attr-progress-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Meta Details -->
+            <div class="card-footer-meta">
+              <span>FOOT: <strong>RIGHT</strong></span>
+              <span>ROLE: <strong>BOX-TO-BOX</strong></span>
+              <span>WR: <strong>HIGH / HIGH</strong></span>
+            </div>
+          </article>
+        </div>
+        <p class="edit-helper-note">* Attribute ratings and stats are customizable placeholders designed for matchday evaluation.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: ABOUT
+         ========================================================================== -->
+    <section id="about" class="section" aria-label="About Mohammed Sajith G">
+      <div class="container">
+        <div class="section-header sub-slide-in">
+          <div class="section-tag">Matchday Programme &bull; Profile</div>
+          <h2 class="section-title">The Athlete &amp; <span>The Vision</span></h2>
+          <p class="section-subtitle">
+            Bridging elite athletic performance with analytical engineering discipline.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio Narrative Card -->
+          <article class="about-bio-card sub-slide-in">
+            <div>
+              <p class="bio-quote-lead">
+                "In football, victory is won in the spaces between lines. In coding, great software is engineered in the logic between functions."
+              </p>
+              <p class="bio-paragraph">
+                I am a professional footballer who thrives on the intensity, rapid decision-making, and discipline demanded at the highest level of sport. Operating from the midfield, my game is centered on reading plays before they unfold, dictating rhythm, and putting the team's victory above everything else.
+              </p>
+              <p class="bio-paragraph">
+                Alongside my football career, I've embarked on a serious journey into computer science and software development. The synergy is natural: debugging code requires the exact same patience as breaking down a low defensive block, while architecting software mirrors the tactical organization of a matchday squad. I bring relentless curiosity, mental toughness, and a collaborative spirit wherever I play or build.
+              </p>
+            </div>
+
+            <!-- Scoreboard Animated Counters Strip -->
+            <div class="scoreboard-stats-row" aria-label="Key athlete metrics">
+              <div class="scoreboard-item">
+                <span class="stat-counter" data-target="75" data-suffix="+">0</span>
+                <span class="stat-label">Matches Played</span>
+              </div>
+              <div class="scoreboard-item">
+                <span class="stat-counter" data-target="89" data-suffix="%">0</span>
+                <span class="stat-label">Pass Accuracy</span>
+              </div>
+              <div class="scoreboard-item">
+                <span class="stat-counter" data-target="1200" data-suffix="+">0</span>
+                <span class="stat-label">Training Hours</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Quick Facts Column -->
+          <div class="facts-card-container sub-slide-in">
+            <div class="fact-box">
+              <div class="fact-icon-badge" aria-hidden="true">⚽</div>
+              <div class="fact-content">
+                <h4>Profession</h4>
+                <p>Professional Footballer</p>
+              </div>
+            </div>
+
+            <div class="fact-box">
+              <div class="fact-icon-badge" aria-hidden="true">💻</div>
+              <div class="fact-content">
+                <h4>Also Learning</h4>
+                <p>Coding &amp; Software Development</p>
+              </div>
+            </div>
+
+            <div class="fact-box">
+              <div class="fact-icon-badge" aria-hidden="true">🎯</div>
+              <div class="fact-content">
+                <h4>Interests</h4>
+                <p>Football, Technology, Problem Solving</p>
+              </div>
+            </div>
+
+            <div class="fact-box">
+              <div class="fact-icon-badge" aria-hidden="true">⚡</div>
+              <div class="fact-content">
+                <h4>Position &amp; Role</h4>
+                <!-- PLACEHOLDER: Position (e.g. Midfielder) -->
+                <p>[Midfielder &bull; Central / Playmaker]</p>
+              </div>
+            </div>
+
+            <div class="fact-box">
+              <div class="fact-icon-badge" aria-hidden="true">🛡️</div>
+              <div class="fact-content">
+                <h4>Club / Team</h4>
+                <!-- PLACEHOLDER: Club Name -->
+                <p>[Your Club Name / League Team]</p>
+              </div>
+            </div>
+
+            <div class="fact-box">
+              <div class="fact-icon-badge" aria-hidden="true">👟</div>
+              <div class="fact-content">
+                <h4>Preferred Foot</h4>
+                <!-- PLACEHOLDER: Preferred Foot -->
+                <p>[Right-Footed]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: CAREER AND ACHIEVEMENTS (FIXTURE LIST STYLE)
+         ========================================================================== -->
+    <section id="career" class="section section-darker" aria-label="Career Fixtures and Achievements">
+      <div class="pitch-bg-pattern" aria-hidden="true">
+        <svg class="pitch-lines-svg" viewBox="0 0 1200 800">
+          <line x1="100" y1="400" x2="1100" y2="400" stroke-width="1.5" />
+          <circle cx="600" cy="400" r="100" stroke-width="1.5" />
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="section-header sub-slide-in">
+          <div class="section-tag">Match History &bull; Career Milestones</div>
+          <h2 class="section-title">Career &amp; <span>Achievements</span></h2>
+          <p class="section-subtitle">
+            Vertical matchday fixture list chronicling tournament campaigns, awards, and club milestones.
+          </p>
+        </div>
+
+        <div class="fixture-timeline">
+          <!-- FIXTURE 1: Current Season (Placeholder) -->
+          <article class="fixture-card sub-slide-in">
+            <div class="fixture-season-col">
+              <span class="fixture-season">2024–PRES</span>
+              <span class="fixture-level">First Team</span>
+            </div>
+            <div class="fixture-main-col">
+              <!-- PLACEHOLDER: Current Club / Tournament -->
+              <h3>[Current Club / Team Campaign]</h3>
+              <p class="fixture-role">Starting Midfielder &bull; League Competition</p>
+              <p class="fixture-desc">
+                Anchoring the central midfield with progressive distribution, high pressing metrics, and box-to-box defensive cover.
+              </p>
+            </div>
+            <div class="fixture-badge-col">
+              <span class="match-result-badge badge-active">ACTIVE CAMPAIGN</span>
+            </div>
+          </article>
+
+          <!-- FIXTURE 2: Tournament Campaign (Placeholder) -->
+          <article class="fixture-card sub-slide-in">
+            <div class="fixture-season-col">
+              <span class="fixture-season">2023–2024</span>
+              <span class="fixture-level">State Championship</span>
+            </div>
+            <div class="fixture-main-col">
+              <!-- PLACEHOLDER: Tournament / Cup Name -->
+              <h3>[Championship Cup / Regional Tournament]</h3>
+              <p class="fixture-role">Midfield Playmaker &bull; Key Starter</p>
+              <p class="fixture-desc">
+                Led the midfield transition throughout the knockouts, providing decisive key passes and maintaining an 89% pass completion rate under high press.
+              </p>
+            </div>
+            <div class="fixture-badge-col">
+              <span class="match-result-badge badge-trophy">FINALIST</span>
+            </div>
+          </article>
+
+          <!-- FIXTURE 3: Youth / Debut Honor (Placeholder) -->
+          <article class="fixture-card sub-slide-in">
+            <div class="fixture-season-col">
+              <span class="fixture-season">2022–2023</span>
+              <span class="fixture-level">Academy &amp; League</span>
+            </div>
+            <div class="fixture-main-col">
+              <!-- PLACEHOLDER: Academy / State Youth Tournament -->
+              <h3>[State Youth Championship / Academy Debut]</h3>
+              <p class="fixture-role">Player of the Tournament &bull; Senior Debut</p>
+              <p class="fixture-desc">
+                Awarded Player of the Tournament for match-winning performances, tactical vision, and leadership on the pitch.
+              </p>
+            </div>
+            <div class="fixture-badge-col">
+              <span class="match-result-badge badge-win">MOM &amp; AWARD</span>
+            </div>
+          </article>
+
+          <!-- FIXTURE 4: Junior Honors (Placeholder) -->
+          <article class="fixture-card sub-slide-in">
+            <div class="fixture-season-col">
+              <span class="fixture-season">2021–2022</span>
+              <span class="fixture-level">District Trophy</span>
+            </div>
+            <div class="fixture-main-col">
+              <!-- PLACEHOLDER: District Trophy / Youth Cup -->
+              <h3>[District Youth League / Inter-District Cup]</h3>
+              <p class="fixture-role">Team Captain &bull; Champion</p>
+              <p class="fixture-desc">
+                Captained the squad to an undefeated tournament victory, topping the leaderboard in assists and progressive ball carries.
+              </p>
+            </div>
+            <div class="fixture-badge-col">
+              <span class="match-result-badge badge-trophy">CHAMPIONS</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: GALLERY
+         ========================================================================== -->
+    <section id="gallery" class="section" aria-label="Photo Gallery">
+      <div class="container">
+        <div class="section-header sub-slide-in">
+          <div class="section-tag">Matchday Action &bull; Gallery</div>
+          <h2 class="section-title">In The <span>Arena</span></h2>
+          <p class="section-subtitle">
+            Match highlights, training intensity, and official portraits. Click any photo to view in high definition with arrow key or swipe navigation.
+          </p>
+        </div>
+
+        <div class="gallery-grid sub-slide-in" role="region" aria-label="Image Grid">
+          <!-- Gallery Item 1: Profile Shot -->
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View official portrait in lightbox">
+            <img 
+              src="assets/images/profile.jpg" 
+              alt="Mohammed Sajith G - Official Player Portrait" 
+              class="gallery-img"
+              loading="lazy"
+              onerror="handleImageError(this)"
+            >
+            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Official Media Day</span>
+              <h3 class="gallery-caption">Mohammed Sajith G &bull; Portrait</h3>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2: Strike Action Shot -->
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View matchday strike in lightbox">
+            <img 
+              src="assets/images/action-1.jpg" 
+              alt="Midfield strike and goal attempt under stadium floodlights" 
+              class="gallery-img"
+              loading="lazy"
+              onerror="handleImageError(this)"
+            >
+            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Matchday Action</span>
+              <h3 class="gallery-caption">Strike Under The Floodlights</h3>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3: Sprint Action Shot -->
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View sprint transition in lightbox">
+            <img 
+              src="assets/images/action-2.jpg" 
+              alt="High tempo transition and sprint with the ball" 
+              class="gallery-img"
+              loading="lazy"
+              onerror="handleImageError(this)"
+            >
+            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Transition Play</span>
+              <h3 class="gallery-caption">High-Tempo Counter Sprint</h3>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4: Tactical Focus Action Shot -->
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View tactical set-piece in lightbox">
+            <img 
+              src="assets/images/action-3.jpg" 
+              alt="Tactical midfield discipline and set-piece focus" 
+              class="gallery-img"
+              loading="lazy"
+              onerror="handleImageError(this)"
+            >
+            <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Matchday Focus</span>
+              <h3 class="gallery-caption">Midfield Tactical Vision</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessible Lightbox Modal Dialog -->
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Match Photo Viewer">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+      <button class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Previous Image">&larr;</button>
+      <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Next Image">&rarr;</button>
+
+      <div class="lightbox-inner">
+        <div class="lightbox-img-wrapper">
+          <img src="" alt="" id="lightbox-img" class="lightbox-img">
+        </div>
+        <div class="lightbox-footer">
+          <p id="lightbox-caption" class="lightbox-caption"></p>
+          <p id="lightbox-counter" class="lightbox-counter"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SECTION 6: SKILLS (TWO SQUADS)
+         ========================================================================== -->
+    <section id="skills" class="section section-darker" aria-label="Squad Skills">
+      <div class="container">
+        <div class="section-header sub-slide-in">
+          <div class="section-tag">Matchday Roster &bull; Capabilities</div>
+          <h2 class="section-title">The Two <span>Squads</span></h2>
+          <p class="section-subtitle">
+            Core strengths divided into Technical capability and Matchday Mindset. Displayed as athletic jersey badges without arbitrary percentage bars.
+          </p>
+        </div>
+
+        <div class="skills-squads-container">
+          <!-- SQUAD 1: TECHNICAL SQUAD -->
+          <div class="squad-column sub-slide-in">
+            <div class="squad-header">
+              <div class="squad-icon-badge" aria-hidden="true">💻</div>
+              <div>
+                <h3 class="squad-title">Technical Squad</h3>
+                <p class="squad-subtitle">Software, Code &amp; Digital Tooling</p>
+              </div>
+            </div>
+
+            <div class="squad-chips-grid">
+              <div class="jersey-badge-chip">
+                <span class="chip-number">01</span>
+                <span>HTML &amp; CSS</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">02</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">03</span>
+                <span>Python (basics)</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">04</span>
+                <span>Java</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">05</span>
+                <span>SQL</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">06</span>
+                <span>Web security (basics)</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">07</span>
+                <span>Git &amp; GitHub</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">08</span>
+                <span>AI tools</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">09</span>
+                <span>Game development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SQUAD 2: TEAM & MINDSET SQUAD -->
+          <div class="squad-column sub-slide-in">
+            <div class="squad-header">
+              <div class="squad-icon-badge" aria-hidden="true">🧠</div>
+              <div>
+                <h3 class="squad-title">Team &amp; Mindset Squad</h3>
+                <p class="squad-subtitle">Athletic Leadership &amp; Execution</p>
+              </div>
+            </div>
+
+            <div class="squad-chips-grid">
+              <div class="jersey-badge-chip">
+                <span class="chip-number">10</span>
+                <span>Teamwork</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">11</span>
+                <span>Communication skills</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">12</span>
+                <span>Public speaking</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">13</span>
+                <span>Open communication</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">14</span>
+                <span>Data analysis</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">15</span>
+                <span>Business analysis</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">16</span>
+                <span>Decision making</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">17</span>
+                <span>Adaptability</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">18</span>
+                <span>Problem solving</span>
+              </div>
+              <div class="jersey-badge-chip">
+                <span class="chip-number">19</span>
+                <span>Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: OFF THE PITCH (CODING JOURNEY & PROJECTS)
+         ========================================================================== -->
+    <section id="off-pitch" class="section" aria-label="Off The Pitch Coding Journey">
+      <div class="pitch-bg-pattern" aria-hidden="true">
+        <svg class="pitch-lines-svg" viewBox="0 0 1200 600">
+          <circle cx="600" cy="300" r="160" stroke-width="1.2" />
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="section-header sub-slide-in">
+          <div class="section-tag">Beyond The 90 Minutes &bull; Tech Journey</div>
+          <h2 class="section-title">Off The <span>Pitch</span></h2>
+          <p class="section-subtitle">
+            Exploring the fundamentals of coding, building prototypes, and engineering digital solutions.
+          </p>
+        </div>
+
+        <!-- Journey Story Card -->
+        <article class="off-pitch-intro sub-slide-in">
+          <p class="journey-quote">
+            "Training doesn't stop when I take off my boots. Writing code is my next arena."
+          </p>
+          <p class="journey-text">
+            I fell in love with programming because it demands the exact same mental fortitude that football requires: continuous repetition, tactical analysis, and the joy of constructing something that works seamlessly under pressure. I am currently learning the fundamentals across web technologies, databases, and programming logic, with a passion for building interactive athletic tools and performance apps.
+          </p>
+        </article>
+
+        <!-- Placeholder Project Cards (Coming Soon) -->
+        <div class="projects-grid sub-slide-in">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <span class="project-status-tag">Coming Soon &bull; In Development</span>
+            <h3 class="project-title">MatchPulse Analytics</h3>
+            <p class="project-desc">
+              An interactive web application designed to visualize match telemetry, midfield passing networks, and transition heatmaps for amateur and youth football academies.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">HTML5 Canvas</span>
+              <span class="tech-pill">Data Analysis</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <span class="project-status-tag">Coming Soon &bull; In Development</span>
+            <h3 class="project-title">BootRoom Training Log</h3>
+            <p class="project-desc">
+              A clean, mobile-first workout and recovery tracking journal created for athletes to record matchday strain, sleep quality, and progressive overload metrics.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-pill">Web App</span>
+              <span class="tech-pill">LocalStorage</span>
+              <span class="tech-pill">UI/UX</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <span class="project-status-tag">Coming Soon &bull; Concept Stage</span>
+            <h3 class="project-title">TacticsBoard Pro</h3>
+            <p class="project-desc">
+              A lightweight digital tactical board enabling players and coaches to animate set-piece movements, corner kick routines, and defensive pressing traps.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-pill">Game Dev Basics</span>
+              <span class="tech-pill">CSS Grid</span>
+              <span class="tech-pill">Python</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 8: CONTACT
+         ========================================================================== -->
+    <section id="contact" class="section section-darker" aria-label="Contact Section">
+      <div class="container contact-container">
+        <div class="contact-card sub-slide-in">
+          <div class="section-tag" style="margin-bottom: 20px;">Kickoff The Conversation</div>
+          
+          <h2 class="contact-tagline">
+            Ready for the <span>next match.</span>
+          </h2>
+
+          <p class="contact-lead">
+            Whether you are a football club scout, coach, athletic director, tech collaborator, or fellow developer looking to connect—my inbox is always open. Let's discuss upcoming opportunities on and off the pitch.
+          </p>
+
+          <div class="contact-buttons-group">
+            <!-- Mailto Button with Pre-filled Subject -->
+            <a 
+              href="mailto:mdsajith19@gmail.com?subject=Hello%20Sajith!" 
+              class="btn btn-primary btn-email"
+              aria-label="Send email to Mohammed Sajith G"
+            >
+              <span>Email Sajith</span>
+              <span class="btn-icon">✉️</span>
+            </a>
+
+            <!-- LinkedIn Button (Target blank, compliant socials) -->
+            <a 
+              href="https://www.linkedin.com/in/mohamed-sajith-g-053a5437b" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-secondary btn-linkedin"
+              aria-label="Connect with Mohammed Sajith G on LinkedIn (opens in a new tab)"
+            >
+              <span>LinkedIn Profile</span>
+              <span class="btn-icon">🔗</span>
+            </a>
+          </div>
+
+          <!-- Quick Email Copy Widget -->
+          <div>
+            <button class="quick-copy-email" id="quick-copy-email" title="Click to copy email address">
+              <span>mdsajith19@gmail.com</span>
+              <span aria-hidden="true">📋</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SECTION 9: FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>MOHAMMED SAJITH G</h4>
+          <p>"Professional footballer. Learning to code. Playing to win."</p>
+        </div>
+
+        <a href="#hero" class="back-to-top-btn" aria-label="Jump to top of stadium">
+          <span>Back To Kickoff</span>
+          <span aria-hidden="true">&uarr;</span>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Mohammed Sajith G. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="mailto:mdsajith19@gmail.com?subject=Hello%20Sajith!">Direct Email</a>
+          <a href="https://www.linkedin.com/in/mohamed-sajith-g-053a5437b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Message for Copy Feedback -->
+  <div id="toast-msg" class="toast-msg" role="status" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
